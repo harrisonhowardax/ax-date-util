@@ -1,5 +1,4 @@
-export const getInitFormat = (): string => {
-	const date = new Date();
+export const dateToFormat = (date: Date): string => {
 	return `${numToLeading(date.getDate())}/${numToLeading(
 		date.getMonth() + 1
 	)}/${date.getFullYear()} ${date.getHours()}:${numToLeading(date.getMinutes())}:${numToLeading(
