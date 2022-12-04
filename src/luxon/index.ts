@@ -13,3 +13,9 @@ export const stringToDate = (dateAsString: string): Date => {
 	console.log(`Luxon string to date ${result.toFormat(FORMAT)}`);
 	return result.toJSDate();
 };
+
+export const numberToDate = (dateAsMS: number): Date => {
+	const result = luxon.DateTime.fromMillis(dateAsMS);
+	console.log(`Luxon number to date ${result.toFormat(FORMAT)}`);
+	return result.toJSDate();
+};

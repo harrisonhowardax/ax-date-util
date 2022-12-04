@@ -13,3 +13,9 @@ export const stringToDate = (dateAsString: string): Date => {
 	console.log(`DayJS string to date ${result.format(FORMAT)}`);
 	return result.toDate();
 };
+
+export const numberToDate = (dateAsMS: number): Date => {
+	const result = dayjs(dateAsMS);
+	console.log(`DayJS number to date ${result.format(FORMAT)}`);
+	return result.toDate();
+};

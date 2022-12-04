@@ -18,3 +18,10 @@ datefns.stringToDate(dateTimeAsString);
 luxon.stringToDate(dateTimeAsString);
 
 console.log("\n---\n"); // Divider
+
+const dateTimeAsMS = 1642573333410;
+dayjs.numberToDate(dateTimeAsMS);
+datefns.numberToDate(dateTimeAsMS);
+luxon.numberToDate(dateTimeAsMS);
+
+console.log("\n---\n"); // Divider

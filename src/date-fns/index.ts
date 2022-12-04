@@ -13,3 +13,9 @@ export const stringToDate = (dateAsString: string): Date => {
 	console.log(`Date-fns string to date ${datefns.format(result, FORMAT)}`);
 	return result;
 };
+
+export const numberToDate = (dateAsMS: number): Date => {
+	const result = datefns.toDate(dateAsMS);
+	console.log(`Date-fns number to date ${datefns.format(result, FORMAT)}`);
+	return result;
+};

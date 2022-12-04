@@ -14,4 +14,11 @@ describe("Date-fns", () => {
 		const stringToDateTest = new Date(dateTimeAsString);
 		expect(stringToDate).toEqual(stringToDateTest);
 	});
+
+	test("Number To Date", () => {
+		const dateTimeAsMS = 1642573333410;
+		const numberToDate = datefns.numberToDate(dateTimeAsMS);
+		const numberToDateTest = new Date(dateTimeAsMS);
+		expect(numberToDate).toEqual(numberToDateTest);
+	});
 });
