@@ -43,3 +43,10 @@ export const timeFromNow = (date: Date): string => {
 	console.log(`Luxon time from now ${result}`);
 	return result || "";
 };
+
+export const sameOrBefore = (date: Date): boolean => {
+	const today = luxon.DateTime.now();
+	const result = today.toMillis() <= date.getTime();
+	console.log(`Luxon same or before ${result}`);
+	return result;
+};

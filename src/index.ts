@@ -54,3 +54,10 @@ datefns.timeFromNow(timeFrom);
 luxon.timeFromNow(timeFrom);
 
 console.log("\n---\n"); // Divider
+
+const sameBefore = new Date(2100, 10, 10);
+dayjs.sameOrBefore(sameBefore);
+datefns.sameOrBefore(sameBefore);
+luxon.sameOrBefore(sameBefore);
+
+console.log("\n---\n"); // Divider

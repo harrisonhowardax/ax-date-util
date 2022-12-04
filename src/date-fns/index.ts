@@ -43,3 +43,10 @@ export const timeFromNow = (date: Date): string => {
 	console.log(`Date-fns time from now ${result}`);
 	return result;
 };
+
+export const sameOrBefore = (date: Date): boolean => {
+	const today = new Date();
+	const result = datefns.isEqual(today, date) || datefns.isBefore(today, date);
+	console.log(`Date-fns same or before ${result}`);
+	return result;
+};

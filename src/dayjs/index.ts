@@ -1,9 +1,11 @@
 import dayjs from "dayjs";
 import quarterOfYear from "dayjs/plugin/quarterOfYear";
 import relativeTime from "dayjs/plugin/relativeTime";
+import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 
 dayjs.extend(quarterOfYear);
 dayjs.extend(relativeTime);
+dayjs.extend(isSameOrBefore);
 
 export const FORMAT = "DD/MM/YYYY H:mm:ss";
 
@@ -46,5 +48,11 @@ export const addQuarters = (quarters: number): Date => {
 export const timeFromNow = (date: Date): string => {
 	const result = dayjs(date).fromNow();
 	console.log(`DayJS time from now ${result}`);
+	return result;
+};
+
+export const sameOrBefore = (date: Date): boolean => {
+	const result = dayjs().isSameOrBefore(date);
+	console.log(`DayJS same or before ${result}`);
 	return result;
 };

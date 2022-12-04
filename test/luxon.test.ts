@@ -53,4 +53,16 @@ describe("Luxon", () => {
 		const timeFromNowEdge1 = luxon.timeFromNow(new Date("INVALID DATE"));
 		expect(timeFromNowEdge1).toBe("");
 	});
+
+	test("Same or Before", () => {
+		const sameDate = new Date();
+		const same = luxon.sameOrBefore(sameDate);
+		const sameTest = sameDate.getTime() === new Date().getTime();
+		expect(same).toBe(sameTest);
+
+		const beforeDate = new Date(2100, 10, 10);
+		const before = luxon.sameOrBefore(beforeDate);
+		const beforeTest = beforeDate.getTime() >= new Date().getTime();
+		expect(before).toBe(beforeTest);
+	});
 });
