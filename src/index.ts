@@ -25,3 +25,10 @@ datefns.numberToDate(dateTimeAsMS);
 luxon.numberToDate(dateTimeAsMS);
 
 console.log("\n---\n"); // Divider
+
+const daysToAdd = 10;
+dayjs.addDays(daysToAdd);
+datefns.addDays(daysToAdd);
+luxon.addDays(daysToAdd);
+
+console.log("\n---\n"); // Divider

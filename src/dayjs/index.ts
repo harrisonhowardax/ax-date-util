@@ -19,3 +19,9 @@ export const numberToDate = (dateAsMS: number): Date => {
 	console.log(`DayJS number to date ${result.format(FORMAT)}`);
 	return result.toDate();
 };
+
+export const addDays = (days: number): Date => {
+	const result = dayjs().add(days, "days");
+	console.log(`DayJS add days ${result.format(FORMAT)}`);
+	return result.toDate();
+};

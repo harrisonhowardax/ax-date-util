@@ -19,3 +19,9 @@ export const numberToDate = (dateAsMS: number): Date => {
 	console.log(`Luxon number to date ${result.toFormat(FORMAT)}`);
 	return result.toJSDate();
 };
+
+export const addDays = (days: number): Date => {
+	const result = luxon.DateTime.now().plus({ days });
+	console.log(`Luxon add days ${result.toFormat(FORMAT)}`);
+	return result.toJSDate();
+};

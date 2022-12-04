@@ -21,4 +21,11 @@ describe("Luxon", () => {
 		const numberToDateTest = new Date(dateTimeAsMS);
 		expect(numberToDate).toEqual(numberToDateTest);
 	});
+
+	test("Add Days", () => {
+		const daysToAdd = 10;
+		const addDays = luxon.addDays(daysToAdd);
+		const addDaysTest = new Date().getDate() + daysToAdd;
+		expect(addDays.getDate()).toBe(addDaysTest);
+	});
 });

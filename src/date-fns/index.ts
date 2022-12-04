@@ -19,3 +19,9 @@ export const numberToDate = (dateAsMS: number): Date => {
 	console.log(`Date-fns number to date ${datefns.format(result, FORMAT)}`);
 	return result;
 };
+
+export const addDays = (days: number): Date => {
+	const result = datefns.add(new Date(), { days });
+	console.log(`Date-fns add days ${datefns.format(result, FORMAT)}`);
+	return result;
+};
