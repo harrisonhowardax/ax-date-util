@@ -25,3 +25,9 @@ export const addDays = (days: number): Date => {
 	console.log(`Luxon add days ${result.toFormat(FORMAT)}`);
 	return result.toJSDate();
 };
+
+export const addWeeks = (weeks: number): Date => {
+	const result = luxon.DateTime.now().plus({ weeks });
+	console.log(`Luxon add weeks ${result.toFormat(FORMAT)}`);
+	return result.toJSDate();
+};

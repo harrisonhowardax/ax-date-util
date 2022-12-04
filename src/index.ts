@@ -32,3 +32,10 @@ datefns.addDays(daysToAdd);
 luxon.addDays(daysToAdd);
 
 console.log("\n---\n"); // Divider
+
+const weeksToAdd = 15;
+dayjs.addWeeks(weeksToAdd);
+datefns.addWeeks(weeksToAdd);
+luxon.addWeeks(weeksToAdd);
+
+console.log("\n---\n"); // Divider

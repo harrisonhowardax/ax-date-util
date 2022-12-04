@@ -6,6 +6,12 @@ export const dateToFormat = (date: Date): string => {
 	)}`;
 };
 
+export const addDays = (date: Date, days: number): Date => {
+	const newDate = new Date(date.valueOf());
+	newDate.setDate(date.getDate() + days);
+	return newDate;
+};
+
 export const numToLeading = (num: number): string => {
 	if (num >= 10) {
 		return `${num}`;

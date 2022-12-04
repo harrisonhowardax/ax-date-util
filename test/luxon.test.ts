@@ -25,7 +25,14 @@ describe("Luxon", () => {
 	test("Add Days", () => {
 		const daysToAdd = 10;
 		const addDays = luxon.addDays(daysToAdd);
-		const addDaysTest = new Date().getDate() + daysToAdd;
-		expect(addDays.getDate()).toBe(addDaysTest);
+		const addDaysTest = util.addDays(new Date(), daysToAdd);
+		expect(util.dateToFormat(addDays)).toBe(util.dateToFormat(addDaysTest));
+	});
+
+	test("Add Weeks", () => {
+		const weeksToAdd = 15;
+		const addWeeks = luxon.addWeeks(weeksToAdd);
+		const addWeeksTest = util.addDays(new Date(), weeksToAdd * 7);
+		expect(util.dateToFormat(addWeeks)).toBe(util.dateToFormat(addWeeksTest));
 	});
 });

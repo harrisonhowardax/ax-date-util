@@ -25,3 +25,9 @@ export const addDays = (days: number): Date => {
 	console.log(`DayJS add days ${result.format(FORMAT)}`);
 	return result.toDate();
 };
+
+export const addWeeks = (weeks: number): Date => {
+	const result = dayjs().add(weeks, "weeks");
+	console.log(`DayJS add weeks ${result.format(FORMAT)}`);
+	return result.toDate();
+};
