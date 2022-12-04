@@ -31,3 +31,9 @@ export const addWeeks = (weeks: number): Date => {
 	console.log(`Date-fns add weeks ${datefns.format(result, FORMAT)}`);
 	return result;
 };
+
+export const addQuarters = (quarters: number): Date => {
+	const result = datefns.addQuarters(new Date(), quarters);
+	console.log(`Date-fns add quarters ${datefns.format(result, FORMAT)}`);
+	return result;
+};

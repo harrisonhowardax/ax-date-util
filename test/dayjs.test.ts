@@ -35,4 +35,11 @@ describe("DayJS", () => {
 		const addWeeksTest = util.addDays(new Date(), weeksToAdd * 7);
 		expect(util.dateToFormat(addWeeks)).toBe(util.dateToFormat(addWeeksTest));
 	});
+
+	test("Add Quarters", () => {
+		const quartersToAdd = 3;
+		const addQuarters = dayjs.addQuarters(quartersToAdd);
+		const addQuartersTest = util.addMonths(new Date(), quartersToAdd * 3);
+		expect(util.dateToFormat(addQuarters)).toBe(util.dateToFormat(addQuartersTest));
+	});
 });

@@ -39,3 +39,10 @@ datefns.addWeeks(weeksToAdd);
 luxon.addWeeks(weeksToAdd);
 
 console.log("\n---\n"); // Divider
+
+const quartersToAdd = 3;
+dayjs.addQuarters(quartersToAdd);
+datefns.addQuarters(quartersToAdd);
+luxon.addQuarters(quartersToAdd);
+
+console.log("\n---\n"); // Divider

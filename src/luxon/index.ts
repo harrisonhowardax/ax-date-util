@@ -31,3 +31,9 @@ export const addWeeks = (weeks: number): Date => {
 	console.log(`Luxon add weeks ${result.toFormat(FORMAT)}`);
 	return result.toJSDate();
 };
+
+export const addQuarters = (quarters: number): Date => {
+	const result = luxon.DateTime.now().plus({ quarters });
+	console.log(`Luxon add quarters ${result.toFormat(FORMAT)}`);
+	return result.toJSDate();
+};

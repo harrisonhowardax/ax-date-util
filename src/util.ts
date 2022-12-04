@@ -12,6 +12,12 @@ export const addDays = (date: Date, days: number): Date => {
 	return newDate;
 };
 
+export const addMonths = (date: Date, months: number): Date => {
+	const newDate = new Date(date.valueOf());
+	newDate.setMonth(date.getMonth() + months);
+	return newDate;
+};
+
 export const numToLeading = (num: number): string => {
 	if (num >= 10) {
 		return `${num}`;

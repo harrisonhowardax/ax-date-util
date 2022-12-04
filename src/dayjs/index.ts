@@ -1,4 +1,7 @@
 import dayjs from "dayjs";
+import quarterOfYear from "dayjs/plugin/quarterOfYear";
+
+dayjs.extend(quarterOfYear);
 
 export const FORMAT = "DD/MM/YYYY H:mm:ss";
 
@@ -29,5 +32,11 @@ export const addDays = (days: number): Date => {
 export const addWeeks = (weeks: number): Date => {
 	const result = dayjs().add(weeks, "weeks");
 	console.log(`DayJS add weeks ${result.format(FORMAT)}`);
+	return result.toDate();
+};
+
+export const addQuarters = (quarters: number): Date => {
+	const result = dayjs().add(quarters, "quarters");
+	console.log(`DayJS add quarters ${result.format(FORMAT)}`);
 	return result.toDate();
 };
