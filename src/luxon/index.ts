@@ -37,3 +37,9 @@ export const addQuarters = (quarters: number): Date => {
 	console.log(`Luxon add quarters ${result.toFormat(FORMAT)}`);
 	return result.toJSDate();
 };
+
+export const timeFromNow = (date: Date): string => {
+	const result = luxon.DateTime.fromJSDate(date).toRelative();
+	console.log(`Luxon time from now ${result}`);
+	return result || "";
+};

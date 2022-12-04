@@ -37,3 +37,9 @@ export const addQuarters = (quarters: number): Date => {
 	console.log(`Date-fns add quarters ${datefns.format(result, FORMAT)}`);
 	return result;
 };
+
+export const timeFromNow = (date: Date): string => {
+	const result = datefns.formatDistanceToNow(date);
+	console.log(`Date-fns time from now ${result}`);
+	return result;
+};

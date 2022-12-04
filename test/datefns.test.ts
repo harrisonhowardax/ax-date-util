@@ -42,4 +42,12 @@ describe("Date-fns", () => {
 		const addQuartersTest = util.addMonths(new Date(), quartersToAdd * 3);
 		expect(util.dateToFormat(addQuarters)).toBe(util.dateToFormat(addQuartersTest));
 	});
+
+	test("Time From Now", () => {
+		const timeFrom = new Date();
+		timeFrom.setFullYear(timeFrom.getFullYear() - 20); // Remove 20 years
+		const timeFromNow = datefns.timeFromNow(timeFrom);
+		const timeFromNowTest = "about 20 years";
+		expect(timeFromNow).toBe(timeFromNowTest);
+	});
 });

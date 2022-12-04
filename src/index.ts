@@ -46,3 +46,11 @@ datefns.addQuarters(quartersToAdd);
 luxon.addQuarters(quartersToAdd);
 
 console.log("\n---\n"); // Divider
+
+const timeFrom = new Date();
+timeFrom.setFullYear(timeFrom.getFullYear() - 20); // Remove 20 years
+dayjs.timeFromNow(timeFrom);
+datefns.timeFromNow(timeFrom);
+luxon.timeFromNow(timeFrom);
+
+console.log("\n---\n"); // Divider

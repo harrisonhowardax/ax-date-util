@@ -1,14 +1,16 @@
 import dayjs from "dayjs";
 import quarterOfYear from "dayjs/plugin/quarterOfYear";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(quarterOfYear);
+dayjs.extend(relativeTime);
 
 export const FORMAT = "DD/MM/YYYY H:mm:ss";
 
 export const init = (): string => {
-	const dateAsFormat = dayjs().format(FORMAT);
-	console.log(`DayJS ready at ${dateAsFormat}`);
-	return dateAsFormat;
+	const result = dayjs().format(FORMAT);
+	console.log(`DayJS ready at ${result}`);
+	return result;
 };
 
 export const stringToDate = (dateAsString: string): Date => {
@@ -39,4 +41,10 @@ export const addQuarters = (quarters: number): Date => {
 	const result = dayjs().add(quarters, "quarters");
 	console.log(`DayJS add quarters ${result.format(FORMAT)}`);
 	return result.toDate();
+};
+
+export const timeFromNow = (date: Date): string => {
+	const result = dayjs(date).fromNow();
+	console.log(`DayJS time from now ${result}`);
+	return result;
 };

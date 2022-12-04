@@ -42,4 +42,12 @@ describe("DayJS", () => {
 		const addQuartersTest = util.addMonths(new Date(), quartersToAdd * 3);
 		expect(util.dateToFormat(addQuarters)).toBe(util.dateToFormat(addQuartersTest));
 	});
+
+	test("Time From Now", () => {
+		const timeFrom = new Date();
+		timeFrom.setFullYear(timeFrom.getFullYear() - 20); // Remove 20 years
+		const timeFromNow = dayjs.timeFromNow(timeFrom);
+		const timeFromNowTest = "20 years ago";
+		expect(timeFromNow).toBe(timeFromNowTest);
+	});
 });
