@@ -58,3 +58,19 @@ export const formatAsLocale = (date: Date, locale: string): string => {
 	console.log(`Luxon format as locale ${result}`);
 	return result;
 };
+
+export const closestTo = (date: Date, dates: Date[]): Date => {
+	const dateAsDayjs = luxon.DateTime.fromJSDate(date);
+	const closest: { date?: Date; diff?: number } = {};
+	for (const d of dates) {
+		const diff = dateAsDayjs.diff(luxon.DateTime.fromJSDate(d), "milliseconds").toMillis();
+		if (!closest.date || !closest.diff || diff < closest.diff) {
+			closest.date = d;
+			closest.diff = diff;
+		}
+	}
+	console.log(
+		`Luxon closest to ${luxon.DateTime.fromJSDate(closest.date || date).toFormat(FORMAT)}`
+	);
+	return closest.date || date;
+};

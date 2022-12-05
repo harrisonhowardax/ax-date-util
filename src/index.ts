@@ -68,3 +68,11 @@ datefns.formatAsLocale(new Date(), locale);
 luxon.formatAsLocale(new Date(), locale);
 
 console.log("\n---\n"); // Divider
+
+const closeStart = new Date();
+const closeArray = [new Date(2002, 6, 6), new Date(2017, 5, 6), new Date(2015, 2, 9)];
+dayjs.closestTo(closeStart, closeArray);
+datefns.closestTo(closeStart, closeArray);
+luxon.closestTo(closeStart, closeArray);
+
+console.log("\n---\n"); // Divider

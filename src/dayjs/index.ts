@@ -66,3 +66,17 @@ export const formatAsLocale = (date: Date, locale: string): string => {
 	console.log(`DayJS format as locale ${result}`);
 	return result;
 };
+
+export const closestTo = (date: Date, dates: Date[]): Date => {
+	const dateAsDayjs = dayjs(date);
+	const closest: { date?: Date; diff?: number } = {};
+	for (const d of dates) {
+		const diff = dateAsDayjs.diff(d, "milliseconds");
+		if (!closest.date || !closest.diff || diff < closest.diff) {
+			closest.date = d;
+			closest.diff = diff;
+		}
+	}
+	console.log(`DayJS closest to ${dayjs(closest.date || date).format(FORMAT)}`);
+	return closest.date || date;
+};

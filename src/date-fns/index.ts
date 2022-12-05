@@ -57,3 +57,9 @@ export const formatAsLocale = (date: Date, locale: keyof typeof locales): string
 	console.log(`Date-fns format as locale ${result}`);
 	return result;
 };
+
+export const closestTo = (date: Date, dates: Date[]): Date => {
+	const result = datefns.closestTo(date, dates);
+	console.log(`Date-fns closest to ${datefns.format(result || date, FORMAT)}`);
+	return result || date;
+};

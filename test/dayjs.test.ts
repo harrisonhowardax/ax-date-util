@@ -54,8 +54,7 @@ describe("DayJS", () => {
 	test("Same Or Before", () => {
 		const sameDate = new Date();
 		const same = dayjs.sameOrBefore(sameDate);
-		const sameTest = sameDate.getTime() === new Date().getTime();
-		expect(same).toBe(sameTest);
+		expect(same).toBe(true);
 
 		const beforeDate = new Date(2100, 10, 10);
 		const before = dayjs.sameOrBefore(beforeDate);
@@ -69,5 +68,16 @@ describe("DayJS", () => {
 		const formatAsLocale = dayjs.formatAsLocale(date, locale);
 		const formatAsLocaleTest = "Juli 6, 2002 12:00 AM";
 		expect(formatAsLocale).toBe(formatAsLocaleTest);
+	});
+
+	test("Closest To", () => {
+		const closeStart = new Date();
+		const closeArray = [new Date(2002, 6, 6), new Date(2017, 5, 6), new Date(2015, 2, 9)];
+		const closestTo = dayjs.closestTo(closeStart, closeArray);
+		const closestToTest = closeArray[1];
+		expect(closestTo.getTime()).toBe(closestToTest.getTime());
+		// Test edge case 1
+		const closestToEdge1 = dayjs.closestTo(closeStart, []);
+		expect(closestToEdge1.getTime()).toBe(closeStart.getTime());
 	});
 });
