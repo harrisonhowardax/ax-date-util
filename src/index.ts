@@ -76,3 +76,12 @@ datefns.closestTo(closeStart, closeArray);
 luxon.closestTo(closeStart, closeArray);
 
 console.log("\n---\n"); // Divider
+
+const clampDate = new Date(2010, 9, 10);
+const clampMin = new Date(2011, 10, 11);
+const clampMax = new Date(2012, 11, 12);
+dayjs.clamp(clampDate, clampMin, clampMax);
+datefns.clamp(clampDate, clampMin, clampMax);
+luxon.clamp(clampDate, clampMin, clampMax);
+
+console.log("\n---\n"); // Divider

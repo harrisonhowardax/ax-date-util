@@ -80,3 +80,17 @@ export const closestTo = (date: Date, dates: Date[]): Date => {
 	console.log(`DayJS closest to ${dayjs(closest.date || date).format(FORMAT)}`);
 	return closest.date || date;
 };
+
+export const clamp = (date: Date, min: Date, max: Date): Date => {
+	const dateAsDayjs = dayjs(date);
+	const isBefore = dateAsDayjs.isBefore(min);
+	const isAfter = dateAsDayjs.isAfter(max);
+	let result = date;
+	if (isBefore) {
+		result = min;
+	} else if (isAfter) {
+		result = max;
+	}
+	console.log(`DayJS clamp ${dayjs(result).format(FORMAT)}`);
+	return result;
+};

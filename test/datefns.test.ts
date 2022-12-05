@@ -80,4 +80,20 @@ describe("Date-fns", () => {
 		const closestToEdge1 = datefns.closestTo(closeStart, []);
 		expect(closestToEdge1.getTime()).toBe(closeStart.getTime());
 	});
+
+	test("Clamp", () => {
+		const clampMin = new Date(2011, 10, 11);
+		const clampMax = new Date(2012, 11, 12);
+		// Cases test if it's before, between, and after
+		const clampBeforeDate = new Date(2010, 9, 10);
+		const clampBetweenDate = new Date(2012, 1, 2);
+		const clampAfterDate = new Date(2013, 1, 2);
+		// Tests the cases
+		const clampBefore = datefns.clamp(clampBeforeDate, clampMin, clampMax);
+		const clampBetween = datefns.clamp(clampBetweenDate, clampMin, clampMax);
+		const clampAfter = datefns.clamp(clampAfterDate, clampMin, clampMax);
+		expect(clampBefore.getTime()).toBe(clampMin.getTime());
+		expect(clampBetween.getTime()).toBe(clampBetweenDate.getTime());
+		expect(clampAfter.getTime()).toBe(clampMax.getTime());
+	});
 });

@@ -63,3 +63,9 @@ export const closestTo = (date: Date, dates: Date[]): Date => {
 	console.log(`Date-fns closest to ${datefns.format(result || date, FORMAT)}`);
 	return result || date;
 };
+
+export const clamp = (date: Date, min: Date, max: Date): Date => {
+	const result = datefns.clamp(date, { start: min, end: max });
+	console.log(`Date-fns clamp ${datefns.format(result, FORMAT)}`);
+	return result;
+};
