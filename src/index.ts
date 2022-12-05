@@ -61,3 +61,10 @@ datefns.sameOrBefore(sameBefore);
 luxon.sameOrBefore(sameBefore);
 
 console.log("\n---\n"); // Divider
+
+const locale = "de";
+dayjs.formatAsLocale(new Date(), locale);
+datefns.formatAsLocale(new Date(), locale);
+luxon.formatAsLocale(new Date(), locale);
+
+console.log("\n---\n"); // Divider

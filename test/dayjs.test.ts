@@ -51,7 +51,7 @@ describe("DayJS", () => {
 		expect(timeFromNow).toBe(timeFromNowTest);
 	});
 
-	test("Same or Before", () => {
+	test("Same Or Before", () => {
 		const sameDate = new Date();
 		const same = dayjs.sameOrBefore(sameDate);
 		const sameTest = sameDate.getTime() === new Date().getTime();
@@ -61,5 +61,13 @@ describe("DayJS", () => {
 		const before = dayjs.sameOrBefore(beforeDate);
 		const beforeTest = beforeDate.getTime() >= new Date().getTime();
 		expect(before).toBe(beforeTest);
+	});
+
+	test("Format As Locale", () => {
+		const date = new Date(2002, 6, 6);
+		const locale = "de";
+		const formatAsLocale = dayjs.formatAsLocale(date, locale);
+		const formatAsLocaleTest = "Juli 6, 2002 12:00 AM";
+		expect(formatAsLocale).toBe(formatAsLocaleTest);
 	});
 });

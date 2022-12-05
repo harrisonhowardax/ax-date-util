@@ -62,4 +62,12 @@ describe("Date-fns", () => {
 		const beforeTest = beforeDate.getTime() >= new Date().getTime();
 		expect(before).toBe(beforeTest);
 	});
+
+	test("Format As Locale", () => {
+		const date = new Date(2002, 6, 6);
+		const locale = "de";
+		const formatAsLocale = datefns.formatAsLocale(date, locale);
+		const formatAsLocaleTest = "Juli 6, 2002 12:00 vorm.";
+		expect(formatAsLocale).toBe(formatAsLocaleTest);
+	});
 });

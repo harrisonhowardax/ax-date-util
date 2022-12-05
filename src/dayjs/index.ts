@@ -2,10 +2,14 @@ import dayjs from "dayjs";
 import quarterOfYear from "dayjs/plugin/quarterOfYear";
 import relativeTime from "dayjs/plugin/relativeTime";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+import LocalizedFormat from "dayjs/plugin/localizedFormat";
+
+import "./loadLocales";
 
 dayjs.extend(quarterOfYear);
 dayjs.extend(relativeTime);
 dayjs.extend(isSameOrBefore);
+dayjs.extend(LocalizedFormat);
 
 export const FORMAT = "DD/MM/YYYY H:mm:ss";
 
@@ -54,5 +58,11 @@ export const timeFromNow = (date: Date): string => {
 export const sameOrBefore = (date: Date): boolean => {
 	const result = dayjs().isSameOrBefore(date);
 	console.log(`DayJS same or before ${result}`);
+	return result;
+};
+
+export const formatAsLocale = (date: Date, locale: string): string => {
+	const result = dayjs(date).locale(locale).format("MMMM D, YYYY h:mm A");
+	console.log(`DayJS format as locale ${result}`);
 	return result;
 };

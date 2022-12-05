@@ -50,3 +50,11 @@ export const sameOrBefore = (date: Date): boolean => {
 	console.log(`Luxon same or before ${result}`);
 	return result;
 };
+
+export const formatAsLocale = (date: Date, locale: string): string => {
+	const result = luxon.DateTime.fromJSDate(date)
+		.setLocale(locale)
+		.toFormat("LLLL d, yyyy h:mm a");
+	console.log(`Luxon format as locale ${result}`);
+	return result;
+};

@@ -1,4 +1,5 @@
 import * as datefns from "date-fns";
+import * as locales from "date-fns/locale";
 
 export const FORMAT = "dd/MM/yyyy H:mm:ss";
 
@@ -48,5 +49,11 @@ export const sameOrBefore = (date: Date): boolean => {
 	const today = new Date();
 	const result = datefns.isEqual(today, date) || datefns.isBefore(today, date);
 	console.log(`Date-fns same or before ${result}`);
+	return result;
+};
+
+export const formatAsLocale = (date: Date, locale: keyof typeof locales): string => {
+	const result = datefns.format(date, "LLLL d, yyyy h:mm a", { locale: locales[locale] });
+	console.log(`Date-fns format as locale ${result}`);
 	return result;
 };
