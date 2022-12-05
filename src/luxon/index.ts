@@ -89,3 +89,9 @@ export const clamp = (date: Date, min: Date, max: Date): Date => {
 	console.log(`Luxon clamp ${luxon.DateTime.fromJSDate(result).toFormat(FORMAT)}`);
 	return result;
 };
+
+export const getTimezone = (): string => {
+	const result = luxon.DateTime.now().zoneName;
+	console.log(`Luxon get timezone ${result}`);
+	return result;
+};

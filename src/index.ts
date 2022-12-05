@@ -85,3 +85,9 @@ datefns.clamp(clampDate, clampMin, clampMax);
 luxon.clamp(clampDate, clampMin, clampMax);
 
 console.log("\n---\n"); // Divider
+
+dayjs.getTimezone();
+datefns.getTimezone();
+luxon.getTimezone();
+
+console.log("\n---\n"); // Divider

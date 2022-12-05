@@ -1,4 +1,5 @@
 import * as datefns from "date-fns";
+import * as datefnstz from "date-fns-tz";
 import * as locales from "date-fns/locale";
 
 export const FORMAT = "dd/MM/yyyy H:mm:ss";
@@ -67,5 +68,14 @@ export const closestTo = (date: Date, dates: Date[]): Date => {
 export const clamp = (date: Date, min: Date, max: Date): Date => {
 	const result = datefns.clamp(date, { start: min, end: max });
 	console.log(`Date-fns clamp ${datefns.format(result, FORMAT)}`);
+	return result;
+};
+
+/**
+ * Not supported
+ */
+export const getTimezone = (): string => {
+	const result = Intl.DateTimeFormat().resolvedOptions().timeZone;
+	console.log(`Date-fns get timezone ${result}`);
 	return result;
 };

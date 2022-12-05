@@ -99,4 +99,10 @@ describe("Luxon", () => {
 		expect(clampBetween.getTime()).toBe(clampBetweenDate.getTime());
 		expect(clampAfter.getTime()).toBe(clampMax.getTime());
 	});
+
+	test("Get Timezone", () => {
+		const getTimezone = luxon.getTimezone();
+		const getTimezoneTest = Intl.DateTimeFormat().resolvedOptions().timeZone;
+		expect(getTimezone).toBe(getTimezoneTest);
+	});
 });
