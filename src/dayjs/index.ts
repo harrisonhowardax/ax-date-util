@@ -5,6 +5,8 @@ import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import { timezones } from "../util";
 
 import "./loadLocales";
 
@@ -14,6 +16,7 @@ dayjs.extend(isSameOrBefore);
 dayjs.extend(LocalizedFormat);
 dayjs.extend(utc);
 dayjs.extend(timezone);
+dayjs.extend(advancedFormat);
 
 export const FORMAT = "DD/MM/YYYY H:mm:ss";
 
@@ -102,5 +105,11 @@ export const clamp = (date: Date, min: Date, max: Date): Date => {
 export const getTimezone = (): string => {
 	const result = dayjs.tz.guess();
 	console.log(`Dayjs get timezone ${result}`);
+	return result;
+};
+
+export const formatTimezone = (date: Date, timezone: timezones[number]): string => {
+	const result = dayjs(date).tz(timezone).format(`${FORMAT} zzz`);
+	console.log(`Dayjs format timezone ${result}`);
 	return result;
 };

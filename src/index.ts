@@ -91,3 +91,11 @@ datefns.getTimezone();
 luxon.getTimezone();
 
 console.log("\n---\n"); // Divider
+
+const formatDate = new Date();
+const formatTimezone = "Australia/Sydney";
+dayjs.formatTimezone(formatDate, formatTimezone);
+datefns.formatTimezone(formatDate, formatTimezone);
+luxon.formatTimezone(formatDate, formatTimezone);
+
+console.log("\n---\n"); // Divider

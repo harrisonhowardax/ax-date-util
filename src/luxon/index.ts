@@ -1,4 +1,5 @@
 import * as luxon from "luxon";
+import { timezones } from "../util";
 
 export const FORMAT = "dd/MM/yyyy H:mm:ss";
 
@@ -93,5 +94,11 @@ export const clamp = (date: Date, min: Date, max: Date): Date => {
 export const getTimezone = (): string => {
 	const result = luxon.DateTime.now().zoneName;
 	console.log(`Luxon get timezone ${result}`);
+	return result;
+};
+
+export const formatTimezone = (date: Date, timezone: timezones[number]): string => {
+	const result = luxon.DateTime.fromJSDate(date).setZone(timezone).toFormat(`${FORMAT} ZZZZZ`);
+	console.log(`Luxon format timezone ${result}`);
 	return result;
 };

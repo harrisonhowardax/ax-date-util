@@ -102,4 +102,15 @@ describe("DayJS", () => {
 		const getTimezoneTest = Intl.DateTimeFormat().resolvedOptions().timeZone;
 		expect(getTimezone).toBe(getTimezoneTest);
 	});
+
+	test("Format Timezone", () => {
+		const date = new Date();
+		const timezone = "Australia/Sydney";
+		const formatTimezone = dayjs.formatTimezone(date, timezone);
+		const formatTimezoneTest = `${util.dateToFormat(date, true)} ${util.getLongTimezoneName(
+			date,
+			timezone
+		)}`;
+		expect(formatTimezone).toBe(formatTimezoneTest);
+	});
 });

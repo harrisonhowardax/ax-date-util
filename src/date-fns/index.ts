@@ -1,6 +1,7 @@
 import * as datefns from "date-fns";
 import * as datefnstz from "date-fns-tz";
 import * as locales from "date-fns/locale";
+import { timezones } from "../util";
 
 export const FORMAT = "dd/MM/yyyy H:mm:ss";
 
@@ -77,5 +78,11 @@ export const clamp = (date: Date, min: Date, max: Date): Date => {
 export const getTimezone = (): string => {
 	const result = Intl.DateTimeFormat().resolvedOptions().timeZone;
 	console.log(`Date-fns get timezone ${result}`);
+	return result;
+};
+
+export const formatTimezone = (date: Date, timezone: timezones[number]): string => {
+	const result = datefnstz.formatInTimeZone(date, timezone, `${FORMAT} zzzz`);
+	console.log(`Date-fns format timezone ${result}`);
 	return result;
 };
